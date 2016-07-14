@@ -22,6 +22,7 @@
                                 <rect key="frame" x="20" y="28" width="560" height="564"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.26274509800000001" green="0.62745098040000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scale">
                                         <real key="value" value="0.90000000000000002"/>
@@ -34,6 +35,10 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="eyeOpen" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zyI-kk-r2X" appends="YES" id="uu0-Mz-Mlj"/>
+                                    <outletCollection property="gestureRecognizers" destination="H1H-4x-om8" appends="YES" id="pfA-1S-3hm"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +54,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zyI-kk-r2X">
+                    <connections>
+                        <action selector="toogleEyes:" destination="BYZ-38-t0r" id="YAD-i9-XtF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <rotationGestureRecognizer id="H1H-4x-om8">
+                    <connections>
+                        <action selector="changeBrows:" destination="BYZ-38-t0r" id="OIC-qa-E1z"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="320" y="244"/>
         </scene>

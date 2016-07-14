@@ -17,7 +17,7 @@ struct FacialExpression {
     enum EyeBrows: Int {
         case Relaxed,Normal,Furrowed
         
-        func moreRelaxedBrow() -> EyeBrows {
+        func moreRelaxed() -> EyeBrows {
             return EyeBrows(rawValue: rawValue - 1) ?? .Relaxed
         }
         
