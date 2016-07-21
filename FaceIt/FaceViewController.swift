@@ -68,15 +68,17 @@ class FaceViewController: UIViewController {
     private let eyeBrowTilts = [FacialExpression.EyeBrows.Relaxed:0.5,.Furrowed:-0.5,.Normal:0.0]
     
     private func updateUI() {
-        
-        switch expression.eyes {
+        if faceView != nil{
+            
+            switch expression.eyes {
             case .Open : faceView.eyeOpen = true
             case .Closed : faceView.eyeOpen = false
             case .Squinting : faceView.eyeOpen = false
+            }
+            
+            faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
+            faceView.eyeBrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
         }
-        
-        faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
-        faceView.eyeBrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
     }
     
     
